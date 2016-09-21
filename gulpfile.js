@@ -9,6 +9,7 @@ const browserSync = require('browser-sync').create(),
     source = require('vinyl-source-stream'),
     sourcemaps = require('gulp-sourcemaps'),
     plumber = require('gulp-plumber'),
+    clean = require('gulp-clean'),
     rename = require('gulp-rename'),
     jade = require('gulp-pug'),
     postCSS = require('gulp-postcss'),
@@ -17,6 +18,14 @@ const browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
     babel = require('gulp-babel'),
     uglifyJS = require('gulp-uglify');
+
+// Clean your dist folder and files inside to start from scratch
+gulp.task('clean', () => {
+    return gulp.src(['dist'], {
+            read: false
+        })
+        .pipe(clean());
+})
 
 // Manage PUG templates
 gulp.task('goPUG', () => {
