@@ -1,16 +1,22 @@
 {
   "name": "newproject",
   "version": "1.0.0",
-  "description": "start development fast",
+  "description": "Start your project fast using gulp, postcss, babel and pug (jade) templates.",
   "main": "main.js",
+  "repository": {
+    "url": "https://github.com/SKaDiZZ/new-project"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "watch"
   },
   "keywords": [
     "gulp",
+    "postcss",
     "scss",
     "babel",
-    "pug"
+    "pug",
+    "starter",
+    "project"
   ],
   "author": "Samir Kahvedzic",
   "license": "ISC",
