@@ -6,29 +6,33 @@ Start developing fast with pug templates, sass and babel support ...
 
 Go to directory where you want your project
 
-    ```bash
-    cd Projects
+```bash
+cd Projects
+```
 
 Get latest code from git repository
 
-    ```bash
-    git clone https://github.com/SKaDiZZ/new-project.git
+```bash
+git clone https://github.com/SKaDiZZ/new-project.git
+```
 
 Go to your new project directory
 
-    ```bash
-    cd new-project
+```bash
+cd new-project
+```
 
 Install node modules
 
   ```bash
   npm install
+  ```
 
 Start developing
 
   ```bash
   gulp
-
+  ```
 
 ## Project is using:
 * [browser-sync](https://github.com/BrowserSync/browser-sync) : Live preview
