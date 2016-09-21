@@ -24,15 +24,20 @@ cd new-project
 
 Install node modules
 
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
+
+Build project for first time
+```bash
+gulp build
+```
 
 Start developing
 
-  ```bash
-  gulp
-  ```
+```bash
+gulp
+```
 
 ## Project is using:
 * Live preview
@@ -47,6 +52,8 @@ Start developing
   * [gulp-uglify](https://github.com/terinjokes/gulp-uglify) : Minify JS files
 * Manage errors
   * [gulp-plumber](https://github.com/floatdrop/gulp-plumber) : Manage gulp errors
+* Manage tasks
+  * [run-sequence](https://github.com/OverZealous/run-sequence) : Runs a sequence of gulp tasks in the specified order.
 * Manage files
   * [gulp-clean](https://github.com/peter-vilja/gulp-clean) : A gulp plugin for removing files and folders from given paths
   * [gulp-rename](https://github.com/hparra/gulp-rename) : Rename minified files
@@ -57,3 +64,5 @@ Start developing
   * [autoprefixer](https://github.com/postcss/autoprefixer) : Parse CSS and add vendor prefixes to rules
   * [cssnano](https://github.com/ben-eb/cssnano) : Minify CSS files
   * [gulp-sass](https://github.com/dlmanning/gulp-sass) : Add SASS support
+  * Manage images
+    * [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) : Minify PNG, JPEG, GIF and SVG images

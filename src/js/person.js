@@ -3,4 +3,7 @@ export default class Person {
     this.name = name;
     this.surname = surname;
   }
+  getName(){
+    return this.name;
+  }
 }

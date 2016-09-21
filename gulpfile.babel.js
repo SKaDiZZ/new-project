@@ -1,7 +1,6 @@
 'use strict';
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-browserSync.create();
 import babel from 'gulp-babel';
 import babelify from 'babelify';
 import browserify from 'browserify';
@@ -9,6 +8,7 @@ import buffer from 'vinyl-buffer';
 import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import uglifyJS from 'gulp-uglify';
+import runSequence from 'run-sequence';
 import plumber from 'gulp-plumber';
 import clean from 'gulp-clean';
 import rename from 'gulp-rename';
@@ -17,14 +17,17 @@ import postCSS from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import sass from 'gulp-sass';
+import imagemin from 'gulp-imagemin';
+
+browserSync.create();
 
 // Clean your dist folder and files inside to start from scratch
-gulp.task('clean', () => {
+gulp.task('goClean', () => {
     return gulp.src(['dist'], {
             read: false
         })
         .pipe(clean());
-})
+});
 
 // Manage PUG templates
 gulp.task('goPUG', () => {
@@ -81,6 +84,27 @@ gulp.task('goJS', () => {
 
 });
 
+// Compress images
+gulp.task('goIMG', () => {
+
+    return gulp.src('./src/images/**/*.+(png|jpg|jpeg|gif|svg)')
+        .pipe(imagemin({
+            optimization: 3,
+            progressive: true,
+            interlaced: true
+        }))
+        .pipe(gulp.dest('./dist/images'))
+        .pipe(browserSync.stream());
+
+});
+
+// Build task
+gulp.task('build', () => {
+
+  runSequence('goClean', ['goPUG','goCSS','goJS','goIMG']);
+
+});
+
 // Watch task
 gulp.task('watch', () => {
 
@@ -91,6 +115,7 @@ gulp.task('watch', () => {
     gulp.watch('./src/**/*.pug', ['goPUG']);
     gulp.watch('./src/scss/**/*.scss', ['goCSS']);
     gulp.watch('./src/js/**/*.js', ['goJS']);
+    gulp.watch('./src/images/**/*', ['goIMG']);
 
 });
 

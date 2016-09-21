@@ -4,6 +4,6 @@ $(document).ready( () => {
 
   let person = new Person("Samir","Kahvedzic");
 
-  console.log(person.name);
+  console.log(person.getName());
 
 });
