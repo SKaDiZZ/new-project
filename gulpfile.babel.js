@@ -1,10 +1,7 @@
 'use strict';
-// Load gulp
 import gulp from 'gulp';
-// Live reload
 import browserSync from 'browser-sync';
 browserSync.create();
-// Manage JS
 import babel from 'gulp-babel';
 import babelify from 'babelify';
 import browserify from 'browserify';
@@ -12,14 +9,10 @@ import buffer from 'vinyl-buffer';
 import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import uglifyJS from 'gulp-uglify';
-// Manage errors
 import plumber from 'gulp-plumber';
-// Manage files
 import clean from 'gulp-clean';
 import rename from 'gulp-rename';
-// Manage templates
 import jade from 'gulp-pug';
-// Manage CSS
 import postCSS from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
