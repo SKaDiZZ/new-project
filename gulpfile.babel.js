@@ -1,23 +1,29 @@
+'use strict';
 // Load gulp
-const gulp = require('gulp');
-
-// Load gulp plugins
-const browserSync = require('browser-sync').create(),
-    babelify = require('babelify'),
-    browserify = require('browserify'),
-    buffer = require('vinyl-buffer'),
-    source = require('vinyl-source-stream'),
-    sourcemaps = require('gulp-sourcemaps'),
-    plumber = require('gulp-plumber'),
-    clean = require('gulp-clean'),
-    rename = require('gulp-rename'),
-    jade = require('gulp-pug'),
-    postCSS = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
-    cssnano = require('cssnano'),
-    sass = require('gulp-sass'),
-    babel = require('gulp-babel'),
-    uglifyJS = require('gulp-uglify');
+import gulp from 'gulp';
+// Live reload
+import browserSync from 'browser-sync';
+browserSync.create();
+// Manage JS
+import babel from 'gulp-babel';
+import babelify from 'babelify';
+import browserify from 'browserify';
+import buffer from 'vinyl-buffer';
+import source from 'vinyl-source-stream';
+import sourcemaps from 'gulp-sourcemaps';
+import uglifyJS from 'gulp-uglify';
+// Manage errors
+import plumber from 'gulp-plumber';
+// Manage files
+import clean from 'gulp-clean';
+import rename from 'gulp-rename';
+// Manage templates
+import jade from 'gulp-pug';
+// Manage CSS
+import postCSS from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import sass from 'gulp-sass';
 
 // Clean your dist folder and files inside to start from scratch
 gulp.task('clean', () => {
@@ -59,7 +65,7 @@ gulp.task('goCSS', () => {
 // Compile javascript
 gulp.task('goJS', () => {
 
-    var bundler = browserify({
+    let bundler = browserify({
         entries: ["./src/js/main.js"]
     });
 
