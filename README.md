@@ -64,5 +64,5 @@ gulp
   * [autoprefixer](https://github.com/postcss/autoprefixer) : Parse CSS and add vendor prefixes to rules
   * [cssnano](https://github.com/ben-eb/cssnano) : Minify CSS files
   * [gulp-sass](https://github.com/dlmanning/gulp-sass) : Add SASS support
-  * Manage images
-    * [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) : Minify PNG, JPEG, GIF and SVG images
+* Manage images
+  * [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) : Minify PNG, JPEG, GIF and SVG images
