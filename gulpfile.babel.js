@@ -54,7 +54,8 @@ gulp.task('goCSS', () => {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(browserSync.stream());
 
 });
 
