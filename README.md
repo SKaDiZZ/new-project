@@ -29,6 +29,7 @@ npm install
 ```
 
 Build project for first time
+
 ```bash
 gulp build
 ```
